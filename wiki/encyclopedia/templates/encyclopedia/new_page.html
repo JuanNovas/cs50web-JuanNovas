@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+<h1>Creating a new page</h1>
+<h4>Write a Markdown file to create the new page.</h4>
+<h4>The first level heading ("# ") will be use as the entry title.</h4>
+<form action="{% url 'new page' %}" method="post">
+    <div>
+        <textarea name="new_entry" style="height: 72vh; width: 80%;"
+    placeholder="# Title
+Text"></textarea>
+    </div>
+    <button type="submit">Save new page</button>
+</form>
+{% endblock %}

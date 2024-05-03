@@ -1,0 +1,24 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h1>Watchlist</h1>
+    {% if not items%}
+        <h3>No items in watchlist</h3>
+    {% else %}
+    <div class="listings_container">
+        {% for item in items%}
+            {% if item.post.active == True%}
+                <div class="item-container">
+                    <div>
+                        <a href="{% url 'listing page' item.post.name%}" class="item_title">{{ item.post.name }}</a>
+                        <p class="item_description">{{ item.post.description }}</p>
+                        <h4 class="item_price">${{ item.post.start_bid }}</h4>
+                        <h3 class="item_category">{{ item.post.get_category_display }}</h3>
+                    </div>
+                    <img src="{{ item.post.image }}" width="340" height="280">
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endblock %}

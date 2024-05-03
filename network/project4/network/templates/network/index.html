@@ -1,0 +1,48 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    {% if request.user.is_authenticated %} 
+    <div id="new_twit_div">
+        <textarea class="form-control" id="new_twit_ta" rows="3"></textarea>
+        <button type="submit" class="btn btn-primary" style="margin-top: 5px;" id="new_twit_butt">Submit</button>        
+    </div>
+    {% endif %}
+
+    <div id="recent_twit_div"></div>
+
+    {% for twit in page %}
+    <div class="post" id="post-{{ twit.id }}">
+        <a href="{% url 'profile' twit.user%}" class="post-user">{{ twit.user }}</a>
+        <p class="post-body" id="body">{{ twit.body }} </p>
+        {% if twit.user == request.user %}
+            <textarea name="tearea" class="tea-edit" id="texare-edit" cols="60" rows="4" style="display: none;"></textarea>
+            <button class="confirm-button" id="confirm-edit" data-twit-id="confirm{{ twit.id }}" style="display: none;">Confirm</button>
+            <button class="edit-button" data-twit-id="{{ twit.id }}">Edit</button>
+        {% endif %}
+        <div class="like-date-container" id="like-div">
+            {% if request.user.is_authenticated %}
+            <input id="give-like" class="like-button" data-twit-id="{{ twit.id }}" type="button" value="&#128151;">
+            {% endif %}
+            <p class="post-like-count" id="like-count-{{ twit.id }}">{{ twit.likes_count }}</p>
+            <p class="post-date" id="date">{{ twit.date }} </p>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="paginator-container">
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}" class="btn btn-primary" id="back">Previous page</a>
+        {% endif %}
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}" class="btn btn-primary" id="next">Next page</a>
+        {% endif %}
+    </div>
+
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'network/network.js' %}"></script>
+    <script src="{% static 'network/like.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+<h1>Updating an entry</h1>
+<h4>Edit the Markdown file to update the entry.</h4>
+<h4>The first level heading ("# ") will be use as the entry title. Do not change it.</h4>
+<form action="../edit entry/{{ title }}" method="post">
+    <div>
+        <textarea name="edit_entry" style="height: 72vh; width: 80%;">{{ content }}</textarea>
+    </div>
+    <button type="submit">Save entry</button>
+</form>
+{% endblock %}

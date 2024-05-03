@@ -1,0 +1,26 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if category %}
+        <h3>{{ category }}</h3>
+        <div class="listings_container">
+            {% for item in posts %}
+                {% if item.active == True%}
+                <div class="item-container">
+                    <div>
+                        <a href="{% url 'listing page' item.name%}" class="item_title">{{ item.name }}</a>
+                        <p class="item_description">{{ item.description }}</p>
+                        <h4 class="item_price">${{ item.start_bid }}</h4>
+                    </div>
+                    <img src="{{ item.image }}" width="340" height="280">
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% else %}
+        {% for category in categorys%}
+        <a href="{% url 'categorys' category%}" class="category_link">{{ category }}</a>
+        <br>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

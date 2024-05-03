@@ -1,0 +1,61 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block script %}
+    <script src="{% static 'network/edit.js' %}"></script>
+    <script src="{% static 'network/like.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+    
+    <div>
+        <div class="profile-header">
+            <h3 class="profile-name">{{ prof_user.username }} </h3>
+            <p class="profile_info" id="followers-profile">Followers {{ followers_count }} </p>
+            <p class="profile_info" id="following-profile">Following {{ follows_count }} </p>
+        </div>
+        {% if request.user.is_authenticated %}
+            {% if request.user != prof_user %}
+                <form action="{% url 'follow' prof_user %}" method="post" class="profile-header">
+                    {% csrf_token %}
+                    {% if not follow %}
+                        <input class="btn btn-primary" id="follow-button" type="submit" value="Follow">
+                    {% else %}
+                        <input class="btn btn-primary" id="follow-button" type="submit" value="Unfollow">
+                    {% endif%}
+                </form>
+            {% endif %}
+        {% endif %}
+        
+    </div>
+
+    {% for twit in page %}
+    <div class="post" id="post-{{ twit.id }}">
+        <a href="{% url 'profile' twit.user%}" class="post-user">{{ twit.user }}</a>
+        <p class="post-body" id="body">{{ twit.body }} </p>
+        {% if twit.user == request.user %}
+            <textarea name="tearea" class="tea-edit" id="texare-edit" cols="60" rows="4" style="display: none;"></textarea>
+            <button class="confirm-button" id="confirm-edit" data-twit-id="confirm{{ twit.id }}" style="display: none;">Confirm</button>
+            <button class="edit-button" data-twit-id="{{ twit.id }}">Edit</button>
+        {% endif %}
+        <div class="like-date-container" id="like-div">
+            {% if request.user.is_authenticated %}
+            <input id="give-like" class="like-button" data-twit-id="{{ twit.id }}" type="button" value="&#128151;">
+            {% endif %}
+            <p class="post-like-count" id="like-count-{{ twit.id }}">{{ twit.likes_count }}</p>
+            <p class="post-date" id="date">{{ twit.date }} </p>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="paginator-container">
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}" class="btn btn-primary" id="back">Previous page</a>
+        {% endif %}
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}" class="btn btn-primary" id="next">Next page</a>
+        {% endif %}
+    </div>
+
+{% endblock %}
+

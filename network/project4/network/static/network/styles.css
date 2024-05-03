@@ -1,0 +1,143 @@
+.body {
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+#new_twit_div {
+    margin-bottom: 0px;
+}
+
+.form-control {
+    border: 2px solid rgb(0, 89, 255);
+    border-radius: 10px;
+    resize: none;
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.post {
+    margin-top: 10px;
+    border: 2px solid rgb(0, 89, 255);
+    padding: 2px 7px;
+    border-radius: 10px;
+    background-color: #eee4;
+}
+
+.like-date-container {
+    display: flex;
+    align-items: center;
+
+}
+
+.post-user {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none !important;
+    font-size: 19px;
+}
+
+.post-body {
+    font-size: 17px;
+    padding-left: 5px;
+}
+
+.btn {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#new_twit_butt {
+    margin-top: 3px;
+    margin-bottom: 15px;
+    margin-left: 6px;
+}
+
+.like-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.post-date {
+    flex: 1;
+    text-align: right;
+    color: #999;
+
+}
+
+.post-like-count {
+    font-size: 20px;
+    padding-top: 13px;
+}
+
+#next {
+    float: right;
+}
+
+#back {
+    float: left;
+}
+
+.edit-button {
+    border-bottom: 2px solid rgba(0, 89, 255, 0.493);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+}
+
+.confirm-button {
+    border-bottom: 2px solid rgba(0, 89, 255, 0.493);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+}
+
+.tea-edit {
+    border: none;
+    resize: none;
+    font-size: 17px;
+    margin-bottom: 4px;
+    background-color: #9991;
+    border-radius: 10px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.profile-header {
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+    text-align: center;
+}
+
+.profile-name {
+    font-size: 40px;
+    grid-column: 1;
+    grid-row: 1;
+    text-align: left;
+}
+
+.profile_info {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+#followers-profile {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#following-profile {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#follow-button {
+    grid-column: 3;
+    margin: 10px;
+}
