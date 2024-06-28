@@ -3,9 +3,9 @@
 The Opening Gambit project is a website where you can practice your chess opening repertoire. By letting the user create or use an existing course and play the same positions over and over again, they will memorize the positions and moves much faster than by other types of practice. This site won't help players to become better chess players in more aspects than the memorization of openings, topic that makes the difference in all skill levels, but especially in the beginners.
 
 # Screenshots
-![Screenshot form the app](screenshots/openings1.jpg)
-![Screenshot form the app x2](screenshots/openings2.jpg)
-![Screenshot form the app x3](screenshots/openings3.jpg)
+![Screenshot form the app](screenshots/openings1.JPG)
+![Screenshot form the app x2](screenshots/openings2.JPG)
+![Screenshot form the app x3](screenshots/openings3.JPG)
 
 
 ## Why I choose this project
