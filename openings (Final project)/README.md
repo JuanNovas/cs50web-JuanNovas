@@ -5,7 +5,7 @@ The Opening Gambit project is a website where you can practice your chess openin
 # Screenshots
 ![Screenshot form the app](screenshots/openings1.JPG)
 ![Screenshot form the app x2](screenshots/openings2.JPG)
-![Screenshot form the app x3](screenshots/Openings3.JPG)
+![Screenshot form the app x3](screenshots/Openings3.jpg)
 
 
 ## Why I choose this project
