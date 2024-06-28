@@ -48,3 +48,5 @@ python manage.py migrate
 python manage.py runserver
 
 And the project should be working
+
+[Explanation Video](https://youtu.be/Il_Hw0q2z8I)
