@@ -17,3 +17,7 @@ Topics include database design, scalability, security, and user experience. Thro
 - User Interfaces
 - Testing, CI/CD
 - Scalability and Security
+
+## 🎓 Diploma
+![Diploma](diploma.png)
+[Verification link](https://certificates.cs50.io/3afa967b-2581-4b6a-8257-b1e68fec36fd.pdf)
